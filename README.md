@@ -23,7 +23,7 @@ Project for the Artificial Intelligence course of the Information Systems progra
 Universidade Presbiteriana Mackenzie (2026), taught by Prof. Dr. Leandro Zerbinatti.
 The system receives a candidate's resume as text and ranks job postings by similarity
 to it. The work continued in
-[ProjetoAplicadoIII](https://github.com/EnzoFerroni/ProjetoAplicadoIII), which adds
+[tech-job-recommender](https://github.com/EnzoFerroni/tech-job-recommender), which adds
 filtering, bigrams and model tuning. Documents and notebooks are in Portuguese.
 
 ## Dataset
@@ -47,8 +47,8 @@ The full pipeline is in
 ## Getting Started
 
 ```bash
-git clone https://github.com/EnzoFerroni/ProjetoIA-RecomendacaoVagas.git
-cd ProjetoIA-RecomendacaoVagas
+git clone https://github.com/EnzoFerroni/job-recommender-nlp.git
+cd job-recommender-nlp
 pip install pandas scikit-learn matplotlib seaborn jupyter
 jupyter notebook notebooks/
 ```
