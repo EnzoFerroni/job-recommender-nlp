@@ -1,33 +1,70 @@
-# SISTEMA DE RECOMENDAÇÃO INTELIGENTE DE OPORTUNIDADES PROFISSIONAIS PARA O MERCADO DE TECNOLOGIA
+# Tech Job Recommender (NLP)
 
-Este repositório contém os artefatos do projeto desenvolvido para a disciplina de Inteligência Artificial (7°K SI - Noite) da Universidade Presbiteriana Mackenzie, ministrada pelo Prof. Dr. Leandro Zerbinatti.
+[![Python](https://img.shields.io/badge/Python-3-3776AB?logo=python&logoColor=white)](https://www.python.org)
+[![scikit-learn](https://img.shields.io/badge/scikit--learn-TF--IDF-F7931E?logo=scikitlearn&logoColor=white)](https://scikit-learn.org)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?logo=jupyter&logoColor=white)](https://jupyter.org)
+[![License](https://img.shields.io/badge/License-MIT-green)](LICENSE)
 
-## Integrantes do Grupo
+A content-based recommender that suggests tech job openings for a candidate profile using TF-IDF and cosine similarity.
 
-Enzo Ferroni - RA: 10417100
+## Table of Contents
 
-Leonardo Rodrigues - RA: 10418105
+- [About](#about)
+- [Dataset](#dataset)
+- [Pipeline](#pipeline)
+- [Getting Started](#getting-started)
+- [Documents](#documents)
+- [Team](#team)
+- [License](#license)
 
-Rafael Neves - RA: 10418316
+## About
 
-## Objetivo do Projeto
+Project for the Artificial Intelligence course of the Information Systems program at
+Universidade Presbiteriana Mackenzie (2026), taught by Prof. Dr. Leandro Zerbinatti.
+The system receives a candidate's resume as text and ranks job postings by similarity
+to it. The work continued in
+[ProjetoAplicadoIII](https://github.com/EnzoFerroni/ProjetoAplicadoIII), which adds
+filtering, bigrams and model tuning. Documents and notebooks are in Portuguese.
 
-Desenvolver um sistema de recomendação baseado em Machine Learning (Filtragem Baseada em Conteúdo) para sugerir oportunidades de emprego na área de tecnologia altamente personalizadas para o perfil do candidato, utilizando técnicas de Processamento de Linguagem Natural (PLN).
+## Dataset
 
-## Sobre o Dataset
+[AI-Powered Job Recommendations](https://www.kaggle.com/datasets/samayashar/ai-powered-job-recommendations/data)
+(Kaggle): 50,000 job postings across industries, locations, experience levels and
+salary ranges. Main fields used: job title, required skills, industry and experience
+level.
 
-O conjunto de dados utilizado neste projeto é o "AI-Powered Job Recommendations", obtido na plataforma Kaggle.
+## Pipeline
 
-Descrição: A base consolida 50.000 anúncios de emprego reais/simulados, abrangendo múltiplos setores, localizações, níveis de experiência e faixas salariais.
+The full pipeline is in
+[`notebooks/Sistema_Recomendacao_Completo.ipynb`](notebooks/Sistema_Recomendacao_Completo.ipynb):
 
-Atributos principais: Título da vaga, Habilidades exigidas (Skills), Setor (Industry) e Nível de Experiência.
+1. Load the dataset and run exploratory analysis
+2. Clean and normalize text (lowercase, punctuation removal)
+3. Vectorize the skills text with TF-IDF
+4. Rank postings by cosine similarity to the candidate profile
+5. Evaluate with Precision@5
 
-Uso: Servirá como o catálogo base (itens) para o qual o algoritmo calculará a similaridade de cosseno com o input (currículo) do usuário.
+## Getting Started
 
-## 🔗 Links
+```bash
+git clone https://github.com/EnzoFerroni/ProjetoIA-RecomendacaoVagas.git
+cd ProjetoIA-RecomendacaoVagas
+pip install pandas scikit-learn matplotlib seaborn jupyter
+jupyter notebook notebooks/
+```
 
-### 💾 Base de Dados (Kaggle): [AI-Powered Job Recommendations](https://www.kaggle.com/datasets/samayashar/ai-powered-job-recommendations/data)
+## Documents
 
-### 📄 Documentação Completa: [Leia o PDF na pasta docs/](docs/ProjetoIA.pdf)
+- Report: [`docs/ProjetoIA.pdf`](docs/ProjetoIA.pdf)
+- Presentation video: [YouTube](https://www.youtube.com/watch?v=U4bau8jKEr0)
 
-### 🎬 Apresentação do Projeto: [Link Youtube](https://www.youtube.com/watch?v=U4bau8jKEr0)
+## Team
+
+- Enzo Ferroni ([@EnzoFerroni](https://github.com/EnzoFerroni))
+- Leonardo Rodrigues
+- Rafael Neves
+
+## License
+
+Code and documents are released under the [MIT License](LICENSE). The dataset belongs
+to its Kaggle author and is redistributed under its original terms.
